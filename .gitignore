@@ -38,3 +38,4 @@ header-check.png
 .env.merged
 .env.local.copy
 .playwright-mcp/
+!.env.production
