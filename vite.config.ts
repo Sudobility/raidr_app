@@ -1,5 +1,6 @@
-/// <reference types="vitest/config" />
-import { defineConfig } from 'vite';
+// defineConfig from vitest/config re-exports vite's with the `test` field typed
+// (vitest 4 dropped the `/// <reference types="vitest/config" />` augmentation).
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react-swc';
 import { serviceWorkerPlugin } from '@sudobility/di_web/vite';
 import path from 'path';

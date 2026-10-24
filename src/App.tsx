@@ -13,7 +13,9 @@ import { lazy, Suspense, type ReactNode } from 'react';
 import { Navigate, Outlet, Route, Routes, useParams, useSearchParams } from 'react-router-dom';
 import { SudobilityAppWithFirebaseAuthAndEntities } from '@sudobility/building_blocks/firebase';
 import { LanguageRedirect, LanguageValidator } from '@sudobility/components';
+import { SEOHead, SEOHeadProvider } from '@sudobility/seo_lib';
 import i18n, { isLanguageSupported } from './i18n';
+import { seoHeadConfig } from './seoHead';
 import { AuthProviderWrapper } from './components/providers/AuthProviderWrapper';
 import ProtectedRoute from './components/layout/ProtectedRoute';
 import { SignInProvider } from './components/auth/SignInProvider';
@@ -185,7 +187,10 @@ export default function App() {
       LoadingFallback={Loading}
       storageKeyPrefix="raidr"
     >
-      <AppRoutes />
+      <SEOHeadProvider config={seoHeadConfig}>
+        <SEOHead title={seoHeadConfig.appName} description={seoHeadConfig.appName} />
+        <AppRoutes />
+      </SEOHeadProvider>
     </SudobilityAppWithFirebaseAuthAndEntities>
   );
 }
