@@ -44,5 +44,5 @@ if (typeof window !== 'undefined') {
     takeRecords(): IntersectionObserverEntry[] {
       return [];
     }
-  };
+  } as unknown as typeof globalThis.IntersectionObserver;
 }
