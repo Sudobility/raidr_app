@@ -9,7 +9,7 @@ import { ToolsTable } from '@/components/ToolsTable';
 import { ConnectDocs } from '@/components/ConnectDocs';
 import { SignInPrompt } from '@/components/SignInPrompt';
 import { useApi } from '@sudobility/building_blocks/firebase';
-import { useAuthStatus } from '@sudobility/auth-components';
+import { useAuthStatus } from '@sudobility/components/auth';
 import { links } from '@/config/links';
 
 /**

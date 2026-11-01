@@ -6,7 +6,7 @@ import type {
   MenuItemConfig,
   TopBarConfig,
 } from '@sudobility/building_blocks';
-import { AuthAction, useAuthStatus } from '@sudobility/auth-components';
+import { AuthAction, useAuthStatus } from '@sudobility/components/auth';
 import { useCurrentEntityOptional } from '@sudobility/entity_client';
 import { CubeIcon, DocumentTextIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import { LinkWrapper } from '@/components/layout/LinkWrapper';

@@ -4,7 +4,7 @@
  * password reset) using i18next translations and Firebase error message mapping.
  */
 
-import type { AuthTexts, AuthErrorTexts } from '@sudobility/auth-components';
+import type { AuthTexts, AuthErrorTexts } from '@sudobility/components/auth';
 import type { TFunction } from 'i18next';
 import { getFirebaseErrorMessage } from '@sudobility/auth_lib';
 

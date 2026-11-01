@@ -11,7 +11,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useAuthStatus } from '@sudobility/auth-components';
+import { useAuthStatus } from '@sudobility/components/auth';
 import { LoginPage as LoginPageComponent } from '@sudobility/building_blocks';
 import { EmptyState, Loading } from '@/components/PageState';
 import { CONSTANTS } from '@/config/constants';

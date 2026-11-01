@@ -7,7 +7,7 @@
  */
 import { useEffect, useRef, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAuthStatus } from '@sudobility/auth-components';
+import { useAuthStatus } from '@sudobility/components/auth';
 import { Loading } from '@/components/PageState';
 import { SignInPrompt } from '@/components/SignInPrompt';
 import { Section } from '@/components/layout/Section';

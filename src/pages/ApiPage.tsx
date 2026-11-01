@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Badge, Button, Card, Heading, Text } from '@sudobility/components';
 import { useApiInspector } from '@sudobility/raidr_lib';
 import { useApi } from '@sudobility/building_blocks/firebase';
-import { useAuthStatus } from '@sudobility/auth-components';
+import { useAuthStatus } from '@sudobility/components/auth';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
 import { Section } from '@/components/layout/Section';
 import { EmptyState, ErrorState, Loading } from '@/components/PageState';

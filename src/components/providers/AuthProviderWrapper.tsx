@@ -9,7 +9,7 @@
  */
 import { type ReactNode, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AuthProvider } from '@sudobility/auth-components';
+import { AuthProvider } from '@sudobility/components/auth';
 import {
   getFirebaseAuth,
   getFirebaseErrorMessage,

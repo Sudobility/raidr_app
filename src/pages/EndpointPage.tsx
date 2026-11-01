@@ -4,7 +4,7 @@ import { Alert, Button, Card, Heading, Text, TextArea } from '@sudobility/compon
 import { useEndpointPlayground } from '@sudobility/raidr_lib';
 import { isApiEndpointV2, type ApiParamLocation } from '@sudobility/raidr_types';
 import { useApi } from '@sudobility/building_blocks/firebase';
-import { useAuthStatus } from '@sudobility/auth-components';
+import { useAuthStatus } from '@sudobility/components/auth';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
 import { Section } from '@/components/layout/Section';
 import { EmptyState, ErrorState, Loading } from '@/components/PageState';

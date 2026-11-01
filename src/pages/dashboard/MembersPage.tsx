@@ -4,7 +4,7 @@
  */
 import { MembersManagementPage } from '@sudobility/entity_pages';
 import { useCurrentEntity } from '@sudobility/entity_client';
-import { useAuthStatus } from '@sudobility/auth-components';
+import { useAuthStatus } from '@sudobility/components/auth';
 import { Loading } from '@/components/PageState';
 import { useEntityClient } from '@/config/entityClient';
 

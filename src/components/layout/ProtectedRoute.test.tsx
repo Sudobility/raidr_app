@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const authState = vi.hoisted(() => ({ user: null as unknown, loading: false }));
 
-vi.mock('@sudobility/auth-components', () => ({
+vi.mock('@sudobility/components/auth', () => ({
   useAuthStatus: () => authState,
 }));
 vi.mock('@sudobility/auth_lib', () => ({
