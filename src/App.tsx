@@ -11,7 +11,7 @@
  */
 import { lazy, Suspense, type ReactNode } from 'react';
 import { Navigate, Outlet, Route, Routes, useParams, useSearchParams } from 'react-router-dom';
-import { SudobilityAppWithFirebaseAuthAndEntities } from '@sudobility/building_blocks/firebase';
+import { SudobilityAppWithFirebaseAuthAndEntities } from '@sudobility/entity_pages';
 import { LanguageRedirect, LanguageValidator } from '@sudobility/components';
 import { SEOHead, SEOHeadProvider } from '@sudobility/seo_lib';
 import i18n, { isLanguageSupported } from './i18n';
@@ -183,7 +183,6 @@ export default function App() {
       i18n={i18n}
       apiUrl={CONSTANTS.API_URL}
       AuthProviderWrapper={AuthProviderWrapper}
-      EntityAwareSubscriptionProvider={false}
       LoadingFallback={Loading}
       storageKeyPrefix="raidr"
     >
