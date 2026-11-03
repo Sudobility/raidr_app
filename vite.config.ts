@@ -25,7 +25,6 @@ export default defineConfig({
       '@sudobility/components',
       '@sudobility/building_blocks',
       '@sudobility/components/subscription',
-      '@sudobility/components/auth',
       '@sudobility/entity_client',
       'firebase',
       'firebase/app',
