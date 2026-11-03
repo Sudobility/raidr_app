@@ -11,7 +11,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useAuthStatus } from '@sudobility/components/auth';
+import { useAuth } from '@/context/AuthContext';
 import { LoginPage as LoginPageComponent } from '@sudobility/building_blocks';
 import { EmptyState, Loading } from '@/components/PageState';
 import { CONSTANTS } from '@/config/constants';
@@ -19,7 +19,7 @@ import { useSignIn } from '@/hooks/useSignIn';
 
 export default function LoginPage() {
   const { t } = useTranslation();
-  const { user, loading } = useAuthStatus();
+  const { user, isLoading: loading } = useAuth();
   const navigate = useNavigate();
   const { lang = 'en' } = useParams<{ lang: string }>();
   const destination = `/${lang}/dashboard`;

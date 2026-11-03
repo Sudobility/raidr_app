@@ -6,9 +6,10 @@ import type {
   MenuItemConfig,
   TopBarConfig,
 } from '@sudobility/building_blocks';
-import { AuthAction, useAuthStatus } from '@sudobility/components/auth';
 import { useCurrentEntityOptional } from '@sudobility/entity_client';
 import { CubeIcon, DocumentTextIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
+import { AuthAction } from '@/components/auth/AuthAction';
+import { useAuth } from '@/context/AuthContext';
 import { LinkWrapper } from '@/components/layout/LinkWrapper';
 import { useLocalizedNavigate } from '@/hooks/useLocalizedNavigate';
 import { isLanguageSupported, SUPPORTED_LANGUAGES } from '@/i18n';
@@ -22,7 +23,7 @@ import { isLanguageSupported, SUPPORTED_LANGUAGES } from '@/i18n';
 export function useTopBarConfig(): TopBarConfig {
   const { t } = useTranslation();
   const { navigate, switchLanguage, currentLanguage } = useLocalizedNavigate();
-  const { user } = useAuthStatus();
+  const { user } = useAuth();
   const entitySlug = useCurrentEntityOptional()?.currentEntitySlug;
 
   const menuItems: MenuItemConfig[] = useMemo(

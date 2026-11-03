@@ -7,7 +7,7 @@
  */
 import { useEffect, useRef, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAuthStatus } from '@sudobility/components/auth';
+import { useAuth } from '@/context/AuthContext';
 import { Loading } from '@/components/PageState';
 import { SignInPrompt } from '@/components/SignInPrompt';
 import { Section } from '@/components/layout/Section';
@@ -16,7 +16,7 @@ import { useSignInModal } from '@/components/auth/signInContext';
 /** Wraps dashboard routes. */
 export default function ProtectedRoute({ children }: { children: ReactNode }) {
   const { t } = useTranslation();
-  const { user, loading } = useAuthStatus();
+  const { user, isLoading: loading } = useAuth();
   const { openSignIn } = useSignInModal();
   const signedOut = !loading && !user;
   const asked = useRef(false);

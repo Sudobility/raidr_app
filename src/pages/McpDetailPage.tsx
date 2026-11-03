@@ -9,7 +9,7 @@ import { ToolsTable } from '@/components/ToolsTable';
 import { ConnectDocs } from '@/components/ConnectDocs';
 import { SignInPrompt } from '@/components/SignInPrompt';
 import { useApi } from '@sudobility/building_blocks/firebase';
-import { useAuthStatus } from '@sudobility/components/auth';
+import { useAuth } from '@/context/AuthContext';
 import { links } from '@/config/links';
 
 /**
@@ -20,7 +20,7 @@ import { links } from '@/config/links';
 export default function McpDetailPage({ apiHost }: { apiHost: string }) {
   const { t } = useTranslation();
   const { networkClient, baseUrl } = useApi();
-  const { user, loading: authLoading } = useAuthStatus();
+  const { user, isLoading: authLoading } = useAuth();
   const [apiKey, setApiKey] = useState('');
   const [siteToken, setSiteToken] = useState('');
   const { summary, manifest, tools, skill, connect, requiresSignIn, isLoading, notFound, error } =

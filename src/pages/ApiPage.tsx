@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Badge, Button, Card, Heading, Text } from '@sudobility/components';
 import { useApiInspector } from '@sudobility/raidr_lib';
 import { useApi } from '@sudobility/building_blocks/firebase';
-import { useAuthStatus } from '@sudobility/components/auth';
+import { useAuth } from '@/context/AuthContext';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
 import { Section } from '@/components/layout/Section';
 import { EmptyState, ErrorState, Loading } from '@/components/PageState';
@@ -20,7 +20,7 @@ export default function ApiPage() {
   const [params] = useSearchParams();
   const apiHost = params.get('domain') ?? '';
   const api = useApi();
-  const { user, loading: authLoading } = useAuthStatus();
+  const { user, isLoading: authLoading } = useAuth();
   // Group tiles on the flow map that list every member.
   const [expandedGroups, setExpandedGroups] = useState<string[]>([]);
   const toggleGroup = useCallback(

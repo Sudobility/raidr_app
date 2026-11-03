@@ -2,10 +2,10 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-const authState = vi.hoisted(() => ({ user: null as unknown, loading: false }));
+const authState = vi.hoisted(() => ({ user: null as unknown, isLoading: false }));
 
-vi.mock('@sudobility/components/auth', () => ({
-  useAuthStatus: () => authState,
+vi.mock('@/context/AuthContext', () => ({
+  useAuth: () => authState,
 }));
 vi.mock('@sudobility/auth_lib', () => ({
   getFirebaseAuth: () => ({}),
@@ -37,7 +37,7 @@ function renderDashboard() {
 describe('ProtectedRoute', () => {
   beforeEach(() => {
     authState.user = null;
-    authState.loading = false;
+    authState.isLoading = false;
   });
 
   it('asks for sign-in in place, with the modal open, instead of redirecting', () => {

@@ -3,7 +3,7 @@
  *
  * SudobilityAppWithFirebaseAuthAndEntities supplies the providers: i18n,
  * theme, TanStack Query, toasts, router, the Firebase Analytics page tracker,
- * Firebase Auth (through AuthProviderWrapper), the API context (`useApi()`:
+ * Firebase Auth (through the auth_lib AuthProvider), the API context (`useApi()`:
  * a network client that adds the signed-in user's token), and
  * CurrentEntityProvider for the selected organization. There is no
  * subscription provider yet (pricing comes later). Every page lives under
@@ -16,7 +16,7 @@ import { LanguageRedirect, LanguageValidator } from '@sudobility/components';
 import { SEOHead, SEOHeadProvider } from '@sudobility/seo_lib';
 import i18n, { isLanguageSupported } from './i18n';
 import { seoHeadConfig } from './seoHead';
-import { AuthProviderWrapper } from './components/providers/AuthProviderWrapper';
+import { AuthProvider } from '@/context/AuthContext';
 import ProtectedRoute from './components/layout/ProtectedRoute';
 import { SignInProvider } from './components/auth/SignInProvider';
 import { CONSTANTS } from './config/constants';
@@ -182,7 +182,7 @@ export default function App() {
     <SudobilityAppWithFirebaseAuthAndEntities
       i18n={i18n}
       apiUrl={CONSTANTS.API_URL}
-      AuthProviderWrapper={AuthProviderWrapper}
+      AuthProviderWrapper={AuthProvider}
       LoadingFallback={Loading}
       storageKeyPrefix="raidr"
     >
