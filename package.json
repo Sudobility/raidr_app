@@ -1,7 +1,7 @@
 {
   "name": "raidr_app",
   "private": true,
-  "version": "0.1.34",
+  "version": "0.1.35",
   "description": "Browse raidr MCP servers and agent skills, with connection and install docs",
   "license": "BUSL-1.1",
   "author": "Sudobility Inc.",
@@ -29,13 +29,13 @@
   "dependencies": {
     "@heroicons/react": "~2.2.0",
     "@sudobility/auth_lib": "^0.0.128",
-    "@sudobility/building_blocks": "^0.0.368",
-    "@sudobility/components": "^5.3.63",
+    "@sudobility/building_blocks": "^0.0.369",
+    "@sudobility/components": "^5.3.64",
     "@sudobility/design": "^1.1.69",
     "@sudobility/di": "^1.5.85",
-    "@sudobility/di_web": "^0.1.280",
+    "@sudobility/di_web": "^0.1.281",
     "@sudobility/entity_client": "^0.0.58",
-    "@sudobility/entity_pages": "^0.0.209",
+    "@sudobility/entity_pages": "^0.0.210",
     "@sudobility/raidr_client": "^0.1.20",
     "@sudobility/raidr_lib": "^0.1.32",
     "@sudobility/raidr_types": "^0.1.19",
@@ -88,6 +88,6 @@
     "url": "https://github.com/Sudobility/raidr_app.git"
   },
   "peerDependencies": {
-    "@sudobility/components": "^5.3.63"
+    "@sudobility/components": "^5.3.64"
   }
 }
