@@ -48,14 +48,28 @@ bun install
 bun run dev               # http://localhost:5144
 ```
 
-## Verify and deploy
+Bun is the only supported package manager. The `@sudobility/*` dependencies
+come from GitHub Packages (`.npmrc` points `@sudobility` at
+`https://npm.pkg.github.com`), so `bun install` needs a GitHub Packages read
+token in your global `~/.npmrc` (`//npm.pkg.github.com/:_authToken=...`) or it
+will 401.
+
+## Test, verify and deploy
 
 ```bash
-bun run verify            # typecheck, lint, test, build
+bun run test:unit         # Vitest once (happy-dom)
+bun run verify            # typecheck + lint + test:unit + build
+bun run build             # tsc -b && vite build → dist/
 bun run deploy            # wrangler pages deploy dist --project-name raidr-app
 ```
 
-There is no CI workflow for this app by design; deploy from a checkout.
+`bun run format` / `format:check` run Prettier over `src/**`; `format:check` is
+not part of `verify`. `bun run generate` rebuilds the SEO assets and prerenders
+routes with Playwright (used at deploy time); it is not needed for local dev.
+
+There is no CI workflow for this app by design (`.github/` holds only
+`dependabot.yml`); deploy from a checkout. `functions/_middleware.js` injects
+SEO snapshots at the edge on Cloudflare Pages via `@sudobility/seo_lib`.
 
 ## Layers
 
