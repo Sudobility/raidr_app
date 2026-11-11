@@ -1,7 +1,7 @@
 {
   "name": "raidr_app",
   "private": true,
-  "version": "0.1.38",
+  "version": "0.1.39",
   "description": "Browse raidr MCP servers and agent skills, with connection and install docs",
   "license": "BUSL-1.1",
   "author": "Sudobility Inc.",
@@ -28,19 +28,19 @@
   },
   "dependencies": {
     "@heroicons/react": "~2.2.0",
-    "@sudobility/auth_lib": "^0.0.129",
-    "@sudobility/building_blocks": "^0.0.374",
-    "@sudobility/components": "^5.3.67",
+    "@sudobility/auth_lib": "^0.0.130",
+    "@sudobility/building_blocks": "^0.0.375",
+    "@sudobility/components": "^5.3.68",
     "@sudobility/design": "^1.1.71",
-    "@sudobility/di": "^1.5.86",
-    "@sudobility/di_web": "^0.1.284",
-    "@sudobility/entity_client": "^0.0.59",
-    "@sudobility/entity_pages": "^0.0.215",
-    "@sudobility/raidr_client": "^0.1.21",
-    "@sudobility/raidr_lib": "^0.1.33",
-    "@sudobility/raidr_types": "^0.1.20",
+    "@sudobility/di": "^1.5.87",
+    "@sudobility/di_web": "^0.1.285",
+    "@sudobility/entity_client": "^0.0.60",
+    "@sudobility/entity_pages": "^0.0.216",
+    "@sudobility/raidr_client": "^0.1.22",
+    "@sudobility/raidr_lib": "^0.1.34",
+    "@sudobility/raidr_types": "^0.1.21",
     "@sudobility/seo_lib": "^0.0.52",
-    "@sudobility/types": "^1.9.79",
+    "@sudobility/types": "^1.10.1",
     "@tanstack/react-query": "~5.104.5",
     "@xyflow/react": "~12.12.0",
     "class-variance-authority": "~0.7.1",
@@ -88,6 +88,6 @@
     "url": "https://github.com/Sudobility/raidr_app.git"
   },
   "peerDependencies": {
-    "@sudobility/components": "^5.3.67"
+    "@sudobility/components": "^5.3.68"
   }
 }
