@@ -6,7 +6,15 @@ import { useCurrentEntityOptional } from '@sudobility/entity_client';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
 import { useLocalizedNavigate } from '@/hooks/useLocalizedNavigate';
 import { useSignInModal } from '@/components/auth/signInContext';
-import { ConnectDocs, EmptyState, ErrorState, Loading, Section, SignInPrompt, ToolsTable } from '@sudobility/raidr_ui';
+import {
+  ConnectDocs,
+  EmptyState,
+  ErrorState,
+  Loading,
+  Section,
+  SignInPrompt,
+  ToolsTable,
+} from '@sudobility/raidr_ui';
 import { useApi } from '@sudobility/building_blocks/firebase';
 import { useAuth } from '@/context/AuthContext';
 import { links } from '@/config/links';

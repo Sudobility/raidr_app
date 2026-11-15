@@ -2,7 +2,14 @@ import { useTranslation } from 'react-i18next';
 import { Card, Heading, Text } from '@sudobility/components';
 import { useSkillCatalog } from '@sudobility/raidr_lib';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
-import { EmptyState, ErrorState, Loading, Pagination, SearchBar, Section } from '@sudobility/raidr_ui';
+import {
+  EmptyState,
+  ErrorState,
+  Loading,
+  Pagination,
+  SearchBar,
+  Section,
+} from '@sudobility/raidr_ui';
 import { useApi } from '@sudobility/building_blocks/firebase';
 import { links } from '@/config/links';
 

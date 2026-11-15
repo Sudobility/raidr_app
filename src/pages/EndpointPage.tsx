@@ -7,7 +7,20 @@ import { useApi } from '@sudobility/building_blocks/firebase';
 import { useAuth } from '@/context/AuthContext';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
 import { useSignInModal } from '@/components/auth/signInContext';
-import { AuthBadge, CopyBlock, CredentialPanel, EmptyState, ErrorState, Loading, MethodBadge, ParamField, ResponseView, SchemaTree, Section, SignInPrompt } from '@sudobility/raidr_ui';
+import {
+  AuthBadge,
+  CopyBlock,
+  CredentialPanel,
+  EmptyState,
+  ErrorState,
+  Loading,
+  MethodBadge,
+  ParamField,
+  ResponseView,
+  SchemaTree,
+  Section,
+  SignInPrompt,
+} from '@sudobility/raidr_ui';
 import { links } from '@/config/links';
 import { CONSTANTS } from '@/config/constants';
 

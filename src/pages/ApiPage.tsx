@@ -8,7 +8,16 @@ import { useAuth } from '@/context/AuthContext';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
 import { useLocalizedNavigate } from '@/hooks/useLocalizedNavigate';
 import { useSignInModal } from '@/components/auth/signInContext';
-import { AuthBadge, EmptyState, ErrorState, FlowMap, Loading, MethodBadge, Section, SignInPrompt } from '@sudobility/raidr_ui';
+import {
+  AuthBadge,
+  EmptyState,
+  ErrorState,
+  FlowMap,
+  Loading,
+  MethodBadge,
+  Section,
+  SignInPrompt,
+} from '@sudobility/raidr_ui';
 import { links } from '@/config/links';
 
 /** `/:lang/api?domain={apiHost}`: one API domain's endpoints, with links to its MCP server and skill. */
