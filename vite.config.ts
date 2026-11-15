@@ -15,6 +15,9 @@ export default defineConfig({
     environment: 'happy-dom',
     setupFiles: ['./src/test/setup.ts'],
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    // Route raidr_ui through Vite so its side-effect CSS import (@xyflow) is
+    // handled instead of hitting Node's loader as an external node_modules file.
+    server: { deps: { inline: ['@sudobility/raidr_ui'] } },
   },
   resolve: {
     dedupe: [
@@ -34,6 +37,8 @@ export default defineConfig({
       'firebase/analytics',
       '@sudobility/raidr_client',
       '@sudobility/raidr_lib',
+      '@sudobility/raidr_ui',
+      '@xyflow/react',
     ],
     alias: {
       '@': path.resolve(__dirname, './src'),

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Button, Heading, Text } from '@sudobility/components';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
-import { Section } from '@/components/layout/Section';
+import { Section } from '@sudobility/raidr_ui';
 
 /** `/:lang/404`; unknown paths under a language redirect here. */
 export default function NotFoundPage() {

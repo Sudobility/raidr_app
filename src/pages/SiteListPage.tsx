@@ -2,9 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Badge, Card, Heading, Text } from '@sudobility/components';
 import { useSiteCatalog } from '@sudobility/raidr_lib';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
-import { Section } from '@/components/layout/Section';
-import { EmptyState, ErrorState, Loading } from '@/components/PageState';
-import { Pagination, SearchBar } from '@/components/SearchPagination';
+import { EmptyState, ErrorState, Loading, Pagination, SearchBar, Section } from '@sudobility/raidr_ui';
 import { useApi } from '@sudobility/building_blocks/firebase';
 
 /** `/:lang/sites`: searchable list of crawled sites. */

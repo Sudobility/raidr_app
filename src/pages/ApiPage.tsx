@@ -6,13 +6,10 @@ import { useApiInspector } from '@sudobility/raidr_lib';
 import { useApi } from '@sudobility/building_blocks/firebase';
 import { useAuth } from '@/context/AuthContext';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
-import { Section } from '@/components/layout/Section';
-import { EmptyState, ErrorState, Loading } from '@/components/PageState';
-import { SignInPrompt } from '@/components/SignInPrompt';
-import { MethodBadge } from '@/components/api/MethodBadge';
-import { AuthBadge } from '@/components/api/AuthBadge';
+import { useLocalizedNavigate } from '@/hooks/useLocalizedNavigate';
+import { useSignInModal } from '@/components/auth/signInContext';
+import { AuthBadge, EmptyState, ErrorState, FlowMap, Loading, MethodBadge, Section, SignInPrompt } from '@sudobility/raidr_ui';
 import { links } from '@/config/links';
-import { FlowMap } from '@/components/api/FlowMap';
 
 /** `/:lang/api?domain={apiHost}`: one API domain's endpoints, with links to its MCP server and skill. */
 export default function ApiPage() {
@@ -20,6 +17,8 @@ export default function ApiPage() {
   const [params] = useSearchParams();
   const apiHost = params.get('domain') ?? '';
   const api = useApi();
+  const { navigate } = useLocalizedNavigate();
+  const { openSignIn } = useSignInModal();
   const { user, isLoading: authLoading } = useAuth();
   // Group tiles on the flow map that list every member.
   const [expandedGroups, setExpandedGroups] = useState<string[]>([]);
@@ -98,6 +97,7 @@ export default function ApiPage() {
               'api.signInDescription',
               'Endpoint documentation and the request playground are available to signed-in users. It is free to sign up.'
             )}
+            onSignIn={() => openSignIn()}
           />
         </Section>
       ) : (
@@ -112,7 +112,12 @@ export default function ApiPage() {
                 'Which calls supply the data (ids, tokens) other calls need. Click a tile to open it.'
               )}
             </Text>
-            <FlowMap graph={inspector.flow} onToggleGroup={toggleGroup} />
+            <FlowMap
+              graph={inspector.flow}
+              onToggleGroup={toggleGroup}
+              onOpenApi={host => navigate(links.api(host))}
+              onOpenEndpoint={ref => navigate(links.endpoint(ref))}
+            />
           </Section>
           <Section spacing="md">
             <Heading level={2} size="2xl" className="mb-4">

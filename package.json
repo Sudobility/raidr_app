@@ -39,6 +39,7 @@
     "@sudobility/raidr_client": "^0.1.23",
     "@sudobility/raidr_lib": "^0.1.35",
     "@sudobility/raidr_types": "^0.1.22",
+    "@sudobility/raidr_ui": "^0.0.1",
     "@sudobility/seo_lib": "^0.0.53",
     "@sudobility/types": "^1.10.2",
     "@tanstack/react-query": "~5.104.5",

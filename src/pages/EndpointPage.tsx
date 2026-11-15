@@ -6,17 +6,10 @@ import { isApiEndpointV2, type ApiParamLocation } from '@sudobility/raidr_types'
 import { useApi } from '@sudobility/building_blocks/firebase';
 import { useAuth } from '@/context/AuthContext';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
-import { Section } from '@/components/layout/Section';
-import { EmptyState, ErrorState, Loading } from '@/components/PageState';
-import { SignInPrompt } from '@/components/SignInPrompt';
-import { CopyBlock } from '@/components/CopyBlock';
-import { MethodBadge } from '@/components/api/MethodBadge';
-import { AuthBadge } from '@/components/api/AuthBadge';
-import { ParamField } from '@/components/api/ParamField';
-import { CredentialPanel } from '@/components/api/CredentialPanel';
-import { ResponseView } from '@/components/api/ResponseView';
-import { SchemaTree } from '@/components/api/SchemaTree';
+import { useSignInModal } from '@/components/auth/signInContext';
+import { AuthBadge, CopyBlock, CredentialPanel, EmptyState, ErrorState, Loading, MethodBadge, ParamField, ResponseView, SchemaTree, Section, SignInPrompt } from '@sudobility/raidr_ui';
 import { links } from '@/config/links';
+import { CONSTANTS } from '@/config/constants';
 
 const LOCATIONS: ApiParamLocation[] = ['path', 'query', 'header', 'body'];
 
@@ -26,6 +19,7 @@ export default function EndpointPage() {
   const [params] = useSearchParams();
   const ref = params.get('endpoint') ?? '';
   const api = useApi();
+  const { openSignIn } = useSignInModal();
   const { user, isLoading: authLoading } = useAuth();
   const pg = useEndpointPlayground({
     ...api,
@@ -44,6 +38,7 @@ export default function EndpointPage() {
             'endpoint.signInDescription',
             'The playground runs requests through raidr for signed-in users. It is free to sign up.'
           )}
+          onSignIn={() => openSignIn()}
         />
       </Section>
     );
@@ -98,6 +93,7 @@ export default function EndpointPage() {
             <CredentialPanel
               auth={endpoint.auth}
               doc={doc}
+              extensionUrl={CONSTANTS.EXTENSION_URL}
               userToken={pg.userToken}
               onUserToken={pg.setUserToken}
               apiKey={pg.apiKey}

@@ -22,7 +22,7 @@ import { SignInProvider } from './components/auth/SignInProvider';
 import { CONSTANTS } from './config/constants';
 import ScreenContainer from './components/layout/ScreenContainer';
 import { ErrorBoundary } from './components/layout/ErrorBoundary';
-import { Loading } from './components/PageState';
+import { Loading } from '@sudobility/raidr_ui';
 import { useDocumentLanguage } from './hooks/useDocumentLanguage';
 import { links, skillSlugFor } from './config/links';
 

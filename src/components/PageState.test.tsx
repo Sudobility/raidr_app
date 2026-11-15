@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { ErrorState } from './PageState';
+import { ErrorState } from '@sudobility/raidr_ui';
 
 describe('ErrorState', () => {
   it('says the API failed rather than that nothing exists', () => {

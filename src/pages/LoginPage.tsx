@@ -13,7 +13,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/context/AuthContext';
 import { LoginPage as LoginPageComponent } from '@sudobility/building_blocks';
-import { EmptyState, Loading } from '@/components/PageState';
+import { EmptyState, Loading } from '@sudobility/raidr_ui';
 import { CONSTANTS } from '@/config/constants';
 import { useSignIn } from '@/hooks/useSignIn';
 

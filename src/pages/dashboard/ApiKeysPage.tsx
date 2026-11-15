@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { ApiKeysPage as ApiKeysPageComponent } from '@sudobility/entity_pages';
 import { useCurrentEntity } from '@sudobility/entity_client';
 import { Text } from '@sudobility/components';
-import { Loading } from '@/components/PageState';
+import { Loading } from '@sudobility/raidr_ui';
 import { useEntityClient } from '@/config/entityClient';
 
 export default function ApiKeysPage() {

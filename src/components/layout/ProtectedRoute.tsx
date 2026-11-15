@@ -8,9 +8,7 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/context/AuthContext';
-import { Loading } from '@/components/PageState';
-import { SignInPrompt } from '@/components/SignInPrompt';
-import { Section } from '@/components/layout/Section';
+import { Loading, Section, SignInPrompt } from '@sudobility/raidr_ui';
 import { useSignInModal } from '@/components/auth/signInContext';
 
 /** Wraps dashboard routes. */
@@ -39,6 +37,7 @@ export default function ProtectedRoute({ children }: { children: ReactNode }) {
             'dashboard.signInDescription',
             'Your organizations, members, invitations and API keys are here once you are signed in. It is free to sign up.'
           )}
+          onSignIn={() => openSignIn()}
         />
       </Section>
     );

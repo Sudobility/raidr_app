@@ -2,10 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Heading, Text } from '@sudobility/components';
 import { useSkillBySlug } from '@sudobility/raidr_lib';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
-import { Section } from '@/components/layout/Section';
-import { EmptyState, ErrorState, Loading } from '@/components/PageState';
-import { CopyBlock } from '@/components/CopyBlock';
-import { Markdown } from '@/components/Markdown';
+import { CopyBlock, EmptyState, ErrorState, Loading, Markdown, Section } from '@sudobility/raidr_ui';
 import { useApi } from '@sudobility/building_blocks/firebase';
 import { links } from '@/config/links';
 

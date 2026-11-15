@@ -2,12 +2,11 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert, Badge, Button, Heading, Text } from '@sudobility/components';
 import { useMcp, useSiteCatalog } from '@sudobility/raidr_lib';
+import { useCurrentEntityOptional } from '@sudobility/entity_client';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
-import { Section } from '@/components/layout/Section';
-import { EmptyState, ErrorState, Loading } from '@/components/PageState';
-import { ToolsTable } from '@/components/ToolsTable';
-import { ConnectDocs } from '@/components/ConnectDocs';
-import { SignInPrompt } from '@/components/SignInPrompt';
+import { useLocalizedNavigate } from '@/hooks/useLocalizedNavigate';
+import { useSignInModal } from '@/components/auth/signInContext';
+import { ConnectDocs, EmptyState, ErrorState, Loading, Section, SignInPrompt, ToolsTable } from '@sudobility/raidr_ui';
 import { useApi } from '@sudobility/building_blocks/firebase';
 import { useAuth } from '@/context/AuthContext';
 import { links } from '@/config/links';
@@ -20,7 +19,11 @@ import { links } from '@/config/links';
 export default function McpDetailPage({ apiHost }: { apiHost: string }) {
   const { t } = useTranslation();
   const { networkClient, baseUrl } = useApi();
+  const { navigate } = useLocalizedNavigate();
+  const { openSignIn } = useSignInModal();
   const { user, isLoading: authLoading } = useAuth();
+  const entitySlug = useCurrentEntityOptional()?.currentEntitySlug;
+  const apiKeysPath = entitySlug ? `/dashboard/${entitySlug}/api-keys` : '/dashboard';
   const [apiKey, setApiKey] = useState('');
   const [siteToken, setSiteToken] = useState('');
   const { summary, manifest, tools, skill, connect, requiresSignIn, isLoading, notFound, error } =
@@ -102,7 +105,7 @@ export default function McpDetailPage({ apiHost }: { apiHost: string }) {
 
       {requiresSignIn || !manifest ? (
         <Section spacing="md">
-          <SignInPrompt />
+          <SignInPrompt onSignIn={() => openSignIn()} />
         </Section>
       ) : (
         <>
@@ -115,6 +118,7 @@ export default function McpDetailPage({ apiHost }: { apiHost: string }) {
               needsSiteToken={manifest.auth.style !== 'none'}
               onApiKeyChange={setApiKey}
               onSiteTokenChange={setSiteToken}
+              onOpenApiKeys={() => navigate(apiKeysPath)}
             />
           </Section>
 

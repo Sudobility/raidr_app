@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { useCurrentEntity, useMyInvitations } from '@sudobility/entity_client';
 import { Badge, Text } from '@sudobility/components';
 import { cn } from '@sudobility/design';
-import { Section } from '@/components/layout/Section';
+import { Section } from '@sudobility/raidr_ui';
 import { useEntityClient } from '@/config/entityClient';
 
 export default function DashboardLayout() {

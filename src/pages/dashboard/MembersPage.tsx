@@ -5,7 +5,7 @@
 import { MembersManagementPage } from '@sudobility/entity_pages';
 import { useCurrentEntity } from '@sudobility/entity_client';
 import { useAuth } from '@/context/AuthContext';
-import { Loading } from '@/components/PageState';
+import { Loading } from '@sudobility/raidr_ui';
 import { useEntityClient } from '@/config/entityClient';
 
 export default function MembersPage() {

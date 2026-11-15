@@ -5,9 +5,7 @@ import { Badge, Card, Heading, Text } from '@sudobility/components';
 import { useDomains } from '@sudobility/raidr_lib';
 import { useApi } from '@sudobility/building_blocks/firebase';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
-import { Section } from '@/components/layout/Section';
-import { EmptyState, ErrorState, Loading } from '@/components/PageState';
-import { Pagination, SearchBar } from '@/components/SearchPagination';
+import { EmptyState, ErrorState, Loading, Pagination, SearchBar, Section } from '@sudobility/raidr_ui';
 import { links } from '@/config/links';
 
 /** `/:lang/domains`: every crawled website; expand one to see the API domains behind it. */

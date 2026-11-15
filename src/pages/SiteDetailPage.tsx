@@ -3,8 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Card, Heading, Text } from '@sudobility/components';
 import { useSite } from '@sudobility/raidr_lib';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
-import { Section } from '@/components/layout/Section';
-import { EmptyState, ErrorState, Loading } from '@/components/PageState';
+import { EmptyState, ErrorState, Loading, Section } from '@sudobility/raidr_ui';
 import { useApi } from '@sudobility/building_blocks/firebase';
 import { links } from '@/config/links';
 

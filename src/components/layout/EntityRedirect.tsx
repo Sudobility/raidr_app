@@ -9,7 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCurrentEntity } from '@sudobility/entity_client';
 import { Button } from '@sudobility/components';
-import { EmptyState, Loading } from '@/components/PageState';
+import { EmptyState, Loading } from '@sudobility/raidr_ui';
 
 export default function EntityRedirect() {
   const { t } = useTranslation();

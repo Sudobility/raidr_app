@@ -2,8 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Card, Heading, Text } from '@sudobility/components';
 import { useRaidrMcps, useRaidrSites, useRaidrSkills } from '@sudobility/raidr_client';
 import { LocalizedLink } from '@/components/layout/LocalizedLink';
-import { Section } from '@/components/layout/Section';
-import { CopyBlock } from '@/components/CopyBlock';
+import { CopyBlock, Section } from '@sudobility/raidr_ui';
 import { useApi } from '@sudobility/building_blocks/firebase';
 import { CONSTANTS } from '@/config/constants';
 
